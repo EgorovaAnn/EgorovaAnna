@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+  <style>
+    i {
+      font-size: 50px;
+    }
+    .golden {
+      color: gold;
+    }
+  </style>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
+стирать, код с решением задачи пишем под комментарием.
+-->
+
+<div class="stars_container">
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+  <i class="fas fa-star"></i>
+</div>
+
+<script>
+  "use strict";
+
+  /*
+  1. При наведении на любую из звезд, данной звезде должен ставиться класс
+  golden, также такой класс должен ставиться всем звездам до нее слева.
+  */
+ const divEl = document.querySelector('div');
+ const iEl = document.querySelectorAll('i');
+ divEl.addEventListener('mouseover', event => {
+   const star = event.target;
+   if(star.tagName !== 'I') {
+     return;
+   }
+   for(const el of iEl ) {
+    el.classList.add('golden');
+     if(el === event.target) {
+       break;
+     }
+   }
+  });
+
+
+  /*
+  2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
+  задания должны быть удалены.
+   */
+  divEl.addEventListener('mouseout', event => {
+    const star = event.target;
+   if(star.tagName !== 'I') {
+     return;
+   }
+   for(const el of iEl ) {
+    el.classList.remove('golden');
+     if(el === event.target) {
+       break;
+     }
+   }
+
+  });
+   
+  /*
+  3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
+  звезды (временно могут становиться черными). Почему так? Напишите словами.
+  Можем ли мы это исправить? Если да, то предложите решение.
+  */
+ /*Честно не догадалась сама,поэтому подсмотрела ответ у Вас по этому вопросу.И
+ само это задание тоже не поняла как сделать самой(чтобы загорелись и звезды
+  слева,посмотрела видео разбор этого задания и постаралась сама повторить.*/
+ 
+
+
+</script>
+</body>
+</html>
